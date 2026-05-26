@@ -207,7 +207,7 @@ jobs:
             qmake-spec: win32-msvc
             release-file: Seamly2D-windows.zip
           - msvc-arch: amd64_arm64
-            qt-arch: win64_msvc2022_arm64
+            qt-arch: win64_msvc2022_arm64_cross_compiled
             qmake-spec: win32-arm64-msvc
             release-file: Seamly2D-win-arm64.zip
 
@@ -217,12 +217,6 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: ${{ matrix.msvc-arch }}
-
-      # ADD THIS STEP HERE TO OVERRIDE THE BROKEN WINDOWS STUB
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
 
       - uses: jurplel/install-qt-action@v4
         with:
