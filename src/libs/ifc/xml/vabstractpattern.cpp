@@ -1731,7 +1731,8 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
     {
         const QStringList tags = QStringList() << TagUnit << TagImage << TagDescription << TagNotes
                                          << TagGradation << TagPatternName << TagPatternNum << TagCompanyName
-                                         << TagCustomerName << TagPatternLabel << TagDraftImages;
+                                         << TagCustomerName << TagPatternLabel
+                                         << TagDraftImages;
         switch (tags.indexOf(tag))
         {
             case 1: //TagImage
